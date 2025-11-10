@@ -1,15 +1,13 @@
 const express = require('express');
+const {getBootcamp,getBootcamps, createBootcamp,updateBootcamp,deleteBootcamp} =require("../controllers/bootcamps");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.status(200).json({
-    success: true,
-    data: {
-      name: "Munaa Tsetsegmaa",
-      age: 26,
-      status: "Learning Node.js",
-    },
-  });
-});
+router.route("/")
+    .get(getBootcamps)
+    .post(createBootcamp);
+    
+router.route("/:id").get(getBootcamp)
+    .put(updateBootcamp)
+    .delete(deleteBootcamp);
 
 module.exports = router;

@@ -11,8 +11,11 @@
   "license": "MIT",
   "description": "Devcamper bootcamp backend project",
   "dependencies": {
+    "colors": "^1.4.0",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.19.3",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
