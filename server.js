@@ -5,6 +5,7 @@ const colors = require("colors");
 
 const logger = require("./middlewares/logger");
 const connectDB = require("./config/db");
+const errorHandler = require("./middlewares/Error");
 
 const bootcamps = require("./routes/bootcamps");
 
@@ -31,6 +32,9 @@ if (process.env.NODE_ENV === "development") {
 
 //// Mount routers
 app.use("/api/v1/bootcamps", bootcamps);
+
+//// Error handler middleware
+app.use(errorHandler);
 
 // // Rate limiting
 // const limiter = rateLimit({
